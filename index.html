@@ -56,14 +56,49 @@
       .controls p {
         margin: 5px 0;
       }
+
+      .error-display {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 0, 0, 0.9);
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 80%;
+        display: none;
+        z-index: 1000;
+      }
     </style>
   </head>
   <body>
     <div id="game-container"></div>
+    <div id="error-display" class="error-display"></div>
     <div class="controls">
       <p><strong>操作方法:</strong></p>
       <p>移動: 矢印キー | ショット: Z | ボム: X | 低速移動: Shift | ポーズ: ESC</p>
     </div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      // エラーハンドリング
+      window.addEventListener('error', (e) => {
+        const errorDiv = document.getElementById('error-display');
+        if (errorDiv) {
+          errorDiv.style.display = 'block';
+          errorDiv.innerHTML = '<h3>エラーが発生しました:</h3><pre>' + e.message + '\n' + e.filename + ':' + e.lineno + '</pre>';
+        }
+        console.error('Error:', e);
+      });
+
+      window.addEventListener('unhandledrejection', (e) => {
+        const errorDiv = document.getElementById('error-display');
+        if (errorDiv) {
+          errorDiv.style.display = 'block';
+          errorDiv.innerHTML = '<h3>Promise エラー:</h3><pre>' + e.reason + '</pre>';
+        }
+        console.error('Unhandled rejection:', e);
+      });
+    </script>
   </body>
 </html>

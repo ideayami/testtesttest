@@ -6,9 +6,11 @@ import Phaser from 'phaser';
 export class BootScene extends Phaser.Scene {
   constructor() {
     super({ key: 'BootScene' });
+    console.log('🚀 BootScene constructor called');
   }
 
   preload(): void {
+    console.log('📦 BootScene preload started');
     // ローディングバー表示
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
@@ -60,6 +62,7 @@ export class BootScene extends Phaser.Scene {
   }
 
   create(): void {
+    console.log('✅ BootScene create - transitioning to TitleScene');
     // タイトルシーンへ遷移
     this.scene.start('TitleScene');
   }

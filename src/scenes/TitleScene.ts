@@ -11,10 +11,13 @@ export class TitleScene extends Phaser.Scene {
 
   constructor() {
     super({ key: 'TitleScene' });
+    console.log('📝 TitleScene constructor called');
   }
 
   create(): void {
+    console.log('🎨 TitleScene create started');
     const { width, height } = this.cameras.main;
+    console.log('Camera dimensions:', width, height);
 
     // タイトル
     const title = this.add.text(width / 2, height / 4, '東方Project風\nシューティングゲーム', {
