@@ -1,0 +1,130 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "name": "Stage 1: 霧の湖",
+      "bgm": "stage1",
+      "background": "lake",
+      "duration": 120000,
+      "boss": {
+        "name": "チルノ",
+        "title": "湖上の氷精",
+        "hp": 3000,
+        "spellCards": [
+          {
+            "name": "氷符「アイシクルフォール」",
+            "duration": 30000,
+            "pattern": "icicle_fall",
+            "bonus": 5000
+          },
+          {
+            "name": "凍符「パーフェクトフリーズ」",
+            "duration": 45000,
+            "pattern": "perfect_freeze",
+            "bonus": 10000
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "type": "fairy_blue",
+          "spawnTime": 5000,
+          "count": 5,
+          "pattern": "wave"
+        },
+        {
+          "type": "fairy_red",
+          "spawnTime": 15000,
+          "count": 8,
+          "pattern": "circle"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Stage 2: 紅魔館への道",
+      "bgm": "stage2",
+      "background": "road",
+      "duration": 150000,
+      "boss": {
+        "name": "紅美鈴",
+        "title": "華人小娘",
+        "hp": 4500,
+        "spellCards": [
+          {
+            "name": "華符「彩光蓮華掌」",
+            "duration": 35000,
+            "pattern": "rainbow_lotus",
+            "bonus": 7000
+          },
+          {
+            "name": "気符「猛虎餓龍」",
+            "duration": 50000,
+            "pattern": "tiger_dragon",
+            "bonus": 12000
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "type": "fairy_green",
+          "spawnTime": 10000,
+          "count": 10,
+          "pattern": "spiral"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Stage 3: 紅魔館図書館",
+      "bgm": "stage3",
+      "background": "library",
+      "duration": 180000,
+      "boss": {
+        "name": "パチュリー・ノーレッジ",
+        "title": "動かない大図書館",
+        "hp": 6000,
+        "spellCards": [
+          {
+            "name": "火水木金土符「賢者の石」",
+            "duration": 40000,
+            "pattern": "five_elements",
+            "bonus": 10000
+          },
+          {
+            "name": "日符「ロイヤルフレア」",
+            "duration": 60000,
+            "pattern": "royal_flare",
+            "bonus": 15000
+          }
+        ]
+      },
+      "enemies": [
+        {
+          "type": "book_spirit",
+          "spawnTime": 15000,
+          "count": 12,
+          "pattern": "random"
+        }
+      ]
+    }
+  ],
+  "difficulties": {
+    "easy": {
+      "enemyMultiplier": 0.7,
+      "bulletSpeedMultiplier": 0.8
+    },
+    "normal": {
+      "enemyMultiplier": 1.0,
+      "bulletSpeedMultiplier": 1.0
+    },
+    "hard": {
+      "enemyMultiplier": 1.5,
+      "bulletSpeedMultiplier": 1.2
+    },
+    "lunatic": {
+      "enemyMultiplier": 2.0,
+      "bulletSpeedMultiplier": 1.5
+    }
+  }
+}

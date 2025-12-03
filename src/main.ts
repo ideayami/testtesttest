@@ -1,0 +1,36 @@
+import Phaser from 'phaser';
+import { BootScene } from '@scenes/BootScene';
+import { TitleScene } from '@scenes/TitleScene';
+import { GameScene } from '@scenes/GameScene';
+import { UIScene } from '@scenes/UIScene';
+import { PauseScene } from '@scenes/PauseScene';
+import { GameOverScene } from '@scenes/GameOverScene';
+import { GameConfig } from '@config/GameConfig';
+
+const config: Phaser.Types.Core.GameConfig = {
+  type: Phaser.AUTO,
+  width: GameConfig.WIDTH,
+  height: GameConfig.HEIGHT,
+  parent: 'game-container',
+  backgroundColor: '#000000',
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { x: 0, y: 0 },
+      debug: false,
+    },
+  },
+  scene: [BootScene, TitleScene, GameScene, UIScene, PauseScene, GameOverScene],
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
+  render: {
+    pixelArt: false,
+    antialias: true,
+  },
+};
+
+window.addEventListener('load', () => {
+  new Phaser.Game(config);
+});
