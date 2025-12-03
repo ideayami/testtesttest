@@ -24,7 +24,7 @@ export default defineConfig({
     sourcemap: true,
   },
   // GitHub Pages用のbase設定
-  // ルートドメイン(username.github.io)の場合: '/'
   // サブディレクトリ(username.github.io/repo-name/)の場合: '/repo-name/'
-  base: '/',
+  // ルートドメイン(username.github.io)の場合: '/'
+  base: process.env.BASE_PATH || '/testtesttest/',
 });
