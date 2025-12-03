@@ -1,6 +1,11 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 
+// GitHub Pagesのリポジトリ名を設定
+// 例: https://username.github.io/repo-name/ の場合、base: '/repo-name/'
+// 例: https://username.github.io/ の場合、base: '/'
+const REPO_NAME = process.env.REPO_NAME || '/';
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -24,7 +29,6 @@ export default defineConfig({
     sourcemap: true,
   },
   // GitHub Pages用のbase設定
-  // ルートドメイン(username.github.io)の場合: '/'
-  // サブディレクトリ(username.github.io/repo-name/)の場合: '/repo-name/'
-  base: '/',
+  // リポジトリ名に合わせて変更してください
+  base: REPO_NAME,
 });
